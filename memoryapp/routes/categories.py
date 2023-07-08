@@ -14,3 +14,8 @@ def add_category():
     category_name = r['name']
 
     return jsonify(create_category(category_name)), 201
+
+
+@app.route('/categories/<int:category_id>', methods=['GET'])
+def category(category_id):
+    return jsonify((gef_category(category_id)))

@@ -17,6 +17,11 @@ def create_category(category_name):
     return category
 
 
+def gef_category(category_id):
+    results = [category for category in categories_list if category.category_id == category_id]
+    return results[0]
+
+
 def __next_category_id():
     global id_categories
     id_categories += 1
