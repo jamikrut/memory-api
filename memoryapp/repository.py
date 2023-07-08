@@ -39,11 +39,13 @@ def delete_category(category_id):
 
     if results:
         categories_list[:] = [category for category in categories_list if category.category_id != category_id]
+        cards_list[:] = [card for card in cards_list if card.category_id != category_id]
     else:
         raise NotFoundException('Category')
 
 
 def get_cards(category_id):
+    print(cards_list)
     categories_result = [category for category in categories_list if category.category_id == category_id]
 
     if not categories_result:
